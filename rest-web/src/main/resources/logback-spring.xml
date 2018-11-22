@@ -13,7 +13,7 @@
       <!--rollover daily-->
       <fileNamePattern>${log.file.directory}.%d{yyyy-MM-dd}.%i-spring.log</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
-          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <!-- or whenever the file size reaches 400MB -->
         <maxFileSize>400MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
@@ -29,7 +29,7 @@
       <!--rollover daily-->
       <fileNamePattern>${log.file.directory}.%d{yyyy-MM-dd}.%i-app.log</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
-          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+              class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <!-- or whenever the file size reaches 400MB -->
         <maxFileSize>400MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
@@ -45,7 +45,7 @@
       <!--rollover daily-->
       <fileNamePattern>${log.file.directory}.%d{yyyy-MM-dd}.%i-libraries.log</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
-          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <!-- or whenever the file size reaches 400MB -->
         <maxFileSize>400MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
@@ -61,7 +61,7 @@
       <!--rollover daily-->
       <fileNamePattern>${log.file.directory}.%d{yyyy-MM-dd}.%i-outbound-impl.log</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
-          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+              class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <!-- or whenever the file size reaches 400MB -->
         <maxFileSize>400MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
@@ -77,7 +77,7 @@
       <!--rollover daily-->
       <fileNamePattern>${log.file.directory}.%d{yyyy-MM-dd}.%i-service-impl.log</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
-          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <!-- or whenever the file size reaches 400MB -->
         <maxFileSize>400MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
@@ -93,7 +93,7 @@
       <!--rollover daily-->
       <fileNamePattern>${log.file.directory}.%d{yyyy-MM-dd}.%i-batch-impl.log</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
-          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <!-- or whenever the file size reaches 400MB -->
         <maxFileSize>400MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
@@ -109,7 +109,7 @@
       <!--rollover daily-->
       <fileNamePattern>${log.file.directory}.%d{yyyy-MM-dd}.%i-inbound-impl.log</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
-          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <!-- or whenever the file size reaches 400MB -->
         <maxFileSize>400MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
@@ -124,6 +124,22 @@
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!--rollover daily-->
       <fileNamePattern>${log.file.directory}.%d{yyyy-MM-dd}.%i-rest-web.log</fileNamePattern>
+      <timeBasedFileNamingAndTriggeringPolicy
+              class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <!-- or whenever the file size reaches 400MB -->
+        <maxFileSize>400MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <encoder>
+      <pattern>[%level] [%date{YYYY-MM-dd HH:mm:ss:SSS}] [%thread] [%logger{10}:%line] : %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="MASTER_LIBRARY">
+    <file>${log.file.directory}-master-library.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!--rollover daily-->
+      <fileNamePattern>${log.file.directory}.%d{yyyy-MM-dd}.%i-master-library.log</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
           class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <!-- or whenever the file size reaches 400MB -->
@@ -171,6 +187,11 @@
 
   <logger additivity="false" level="DEBUG" name="com.tiket.tix.project.rest.web">
     <appender-ref ref="REST_WEB"/>
+    <appender-ref ref="STDOUT"/>
+  </logger>
+
+  <logger additivity="false" level="DEBUG" name="com.tiket.tix.master.library">
+    <appender-ref ref="MASTER_LIBRARY"/>
     <appender-ref ref="STDOUT"/>
   </logger>
 </configuration>

@@ -87,6 +87,7 @@
     <elastic.search.version>6.2.4</elastic.search.version>
     <maven.javadoc.skip>true</maven.javadoc.skip>
     <reactor.scheduler.version>1.0.2</reactor.scheduler.version>
+    <master.version>1.0.0-0-SNAPSHOT</master.version>
   </properties>
 
   <dependencyManagement>
@@ -156,6 +157,11 @@
         <groupId>com.tiket.tix.common</groupId>
         <artifactId>rest-web-model</artifactId>
         <version>${tix.common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.tiket.tix.master.library</groupId>
+        <artifactId>master-starter</artifactId>
+        <version>${master.version}</version>
       </dependency>
       <!-- =========== Internal Dependency=========== -->
 
@@ -359,6 +365,10 @@
     <dependency>
       <groupId>com.tiket.tix.common</groupId>
       <artifactId>rest-web-model</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.tiket.tix.master.library</groupId>
+      <artifactId>master-starter</artifactId>
     </dependency>
 
   </dependencies>
