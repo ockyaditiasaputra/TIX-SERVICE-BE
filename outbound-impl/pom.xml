@@ -1,46 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>project</artifactId>
-        <groupId>com.tiket.tix.project</groupId>
-        <version>1.0.0-0-SNAPSHOT</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>project</artifactId>
+    <groupId>com.tiket.tix.project</groupId>
+    <version>1.0.0-0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>outbound-impl</artifactId>
+  <artifactId>outbound-impl</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.tiket.tix.project</groupId>
-            <artifactId>outbound-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.tiket.tix.project</groupId>
-            <artifactId>dao</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.tiket.tix.project</groupId>
-            <artifactId>entity</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-amqp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-rabbit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-undertow</artifactId>
-        </dependency>
-    </dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>com.tiket.tix.project</groupId>
+      <artifactId>outbound-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.tiket.tix.project</groupId>
+      <artifactId>dao</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.tiket.tix.project</groupId>
+      <artifactId>entity</artifactId>
+    </dependency>
+  </dependencies>
 </project>

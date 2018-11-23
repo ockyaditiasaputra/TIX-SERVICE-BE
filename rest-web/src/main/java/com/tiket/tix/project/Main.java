@@ -1,4 +1,4 @@
-package com.tiket.tix.project.rest.web;
+package com.tiket.tix.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
